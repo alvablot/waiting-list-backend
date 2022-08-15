@@ -1,11 +1,11 @@
 const http = require("http");
 const { Server } = require("socket.io");
 const { instrument } = require("@socket.io/admin-ui");
-
+const cors = require("cors");
 const knex = require("./db");
 
 // Socket io admin
-
+app.use(cors()); 
 const server = http.createServer((request, response) => {
     
     // 1. Tell the browser everything is OK (Status code 200), and the data is in plain text
